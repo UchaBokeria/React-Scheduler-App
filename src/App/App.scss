@@ -5,11 +5,125 @@ menu {
     left: 0;
     margin:0;
     padding:0;
-    width: 13%;
+    width: 6%;
     height: 100%;
     position: fixed;
+    user-select: none;
     background: $primary;
     color: white;
+    transition: all 1s;
 
     @include flex(space-around, column);
+
+
+    p {
+        font-size: 0.8vw;
+        letter-spacing: 0.2rem;
+        color: white;
+        animation: showup 1s;
+    }
+
+    .activated {
+        i, p {
+            color: $secondary;
+        }
+    }
+
+    Link { 
+        text-decoration: none; 
+    }
+
+    h1 { 
+        letter-spacing: 0.1rem;
+        color: $secondary;
+        animation: showup 1s;
+    }
+
+    @keyframes showup {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    a {
+        &:hover {
+            i , p {
+                transition: all 1s;
+                color: $secondary;
+            }
+        }
+        position: relative;
+        width: 100%;
+        height: 5vh;
+        @include flex();
+    }
+    
+
+    i {
+        transition: all 1s;
+        position: fixed;
+        font-size: 1.6vw;
+        cursor: pointer;
+        color: white;
+        left: 2.3%;
+        &:hover {
+            transition: all 1s;
+            color: $secondary;
+        }
+    }
+
+    img {
+        transition: all 1s;
+        position: fixed;
+        width: 15%;
+        left: -0.5vw;
+        top: 80vh;
+        height: 30vh;
+        cursor: pointer;
+        border-radius: 100ch;
+    }
+    
+    .toggle {
+        transition: all 1s;
+        &:hover {
+            transition: all 1s;
+        }
+        
+        left: 2.2%;
+        font-size: 1.6vw;
+        color: $tertiary;
+        animation: colorChange 2s infinite;
+        animation-timing-function:ease-in-out;
+
+    }
+    
+    @keyframes colorChange {
+        0% {
+            color: $secondary;
+        }
+
+        50% {
+            color: $tertiary;
+        }
+
+        100% {
+            color: $secondary;
+        }
+    }
+
+    .aqua {
+        color: $tertiary;
+    }
+}
+
+.maximize {
+    width: 13%;
 }

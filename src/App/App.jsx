@@ -39,23 +39,9 @@ export default class App extends React.Component {
           <menu className={ this.state.toggle ? 'maximize' : 'minimize' }>
 
             <a>
-              { 
-                !this.state.toggle && 
-                  <i className="material-icons aqua" 
-                     onClick={ this.toggle }>menu
-                  </i> 
-              }
-              
-              { 
-                this.state.toggle && 
-                  <i className="material-icons toggle" 
-                     onClick={ this.toggle }>close
-                  </i> 
-              }
-              
-              { 
-                this.state.toggle && 
-                  <pre><h1> Tasker</h1></pre> }
+              { !this.state.toggle && <i className="material-icons aqua" onClick={ this.toggle }>menu</i> }
+              { this.state.toggle && <i className="material-icons toggle" onClick={ this.toggle }>close</i> }
+              { this.state.toggle && <pre><h1> Tasker</h1></pre> }
             </a>
 
             <Link to="Tasks" className="activated" onClick={this.activateRoute}>

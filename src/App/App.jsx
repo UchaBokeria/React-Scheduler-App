@@ -72,6 +72,7 @@ export default class App extends React.Component {
 
           <section>
             <Routes>
+              <Route path="/" element={<Tasks />} />
               <Route path="Tasks" element={<Tasks />} />
               <Route path="Projects" element={<Projects />} />
               <Route path="Settings" element={<Settings />} />

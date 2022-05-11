@@ -1,0 +1,49 @@
+@import "../../Assets/Styles/Linkin";
+
+.Table {
+    background-color: #333;
+    height:auto;
+    width: 40%;
+    color: white;
+    @include shadow();
+    border-radius: 0.7ch;
+
+    @include flex(center, column);
+
+    .TableHeader {
+        user-select: none;
+        width:100%;
+        @include flex(space-between);
+    }
+
+    .TableHeaderRow {
+        box-sizing: border-box;
+        padding: 1rem;
+        border-bottom: 1px solid white;
+        width:100%;
+        @include flex();
+    }
+    
+
+    .TableHeaderSearch {
+        display:none;
+        @include flex();
+    }
+
+    .TableBody {
+        width:100%;
+        @include flex(center, column);
+    }
+
+    .tr {
+        width:100%;
+        @include flex(center);
+        padding: 0.5rem;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .td, .th {
+        @include grid();
+    }
+
+}

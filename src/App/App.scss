@@ -5,7 +5,6 @@ menu {
     left: 0;
     margin:0;
     padding:0;
-    width: 6%;
     height: 100%;
     position: fixed;
     user-select: none;
@@ -14,7 +13,6 @@ menu {
     transition: all 1s;
 
     @include flex(space-around, column);
-
 
     p {
         font-size: 0.8vw;
@@ -29,28 +27,10 @@ menu {
         }
     }
 
-    Link { 
-        text-decoration: none; 
-    }
-
     h1 { 
         letter-spacing: 0.1rem;
         color: $secondary;
         animation: showup 1s;
-    }
-
-    @keyframes showup {
-        0% {
-            opacity: 0;
-        }
-
-        30% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
     }
 
     a {
@@ -104,26 +84,33 @@ menu {
         animation-timing-function:ease-in-out;
 
     }
+
+    .aqua {color: $tertiary;}
     
-    @keyframes colorChange {
-        0% {
-            color: $secondary;
-        }
-
-        50% {
-            color: $tertiary;
-        }
-
-        100% {
-            color: $secondary;
-        }
-    }
-
-    .aqua {
-        color: $tertiary;
-    }
 }
 
 .maximize {
     width: 13%;
+}
+.minimize {
+    width: 6%;
+}
+
+section {
+    top: 0;
+    right:0;
+    padding: 2%;
+    min-height: 100vh;
+    height: auto;
+    position:absolute;
+    transition: all 1s;
+    box-sizing: border-box;
+    background-color: $background;
+}
+
+.maximizeSection {
+    width: 87%;
+}
+.minimizeSection {
+    width: 94%;
 }

@@ -35,7 +35,6 @@ export default class App extends React.Component {
   render() {
     return (
         <div className="App">
-
           <menu className={ this.state.toggle ? 'maximize' : 'minimize' }>
 
             <a>
@@ -70,7 +69,7 @@ export default class App extends React.Component {
 
           </menu>
 
-          <section>
+          <section className={ this.state.toggle ? 'maximizeSection' : 'minimizeSection'}>
             <Routes>
               <Route path="/" element={<Tasks />} />
               <Route path="Tasks" element={<Tasks />} />

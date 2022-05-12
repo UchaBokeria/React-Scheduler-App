@@ -12,3 +12,14 @@ a {
 Link { 
     text-decoration: none; 
 }
+
+button {
+    border:0;
+    outline:0;
+    border-radius: 0.6ch;
+    padding: 1ch;
+    font-size: 1vw;
+    cursor: pointer;
+    background: $tertiary;
+    color: white;
+}

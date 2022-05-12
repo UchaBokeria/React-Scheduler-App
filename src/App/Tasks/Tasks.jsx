@@ -36,10 +36,26 @@ export default class Tasks extends Component {
             <h1>Tasks</h1>
             <div>
               {
-                <Table dataset={
+                <Table config={
                   {
                     data: this.data,
-                    columns: ["id", "name", "age"]
+                    columns: [
+                      
+                      {
+                        name: "id",
+                        title: "Num",
+                        hidden: true
+                      }, 
+                      {
+                        name: "name",
+                        title: "Title",
+                        hidden: false
+                      }, 
+                      {
+                        name: "age",
+                        title: "Age"
+                      }
+                    ]
                   }
                 }/>
               }

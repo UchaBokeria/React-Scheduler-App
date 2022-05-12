@@ -64,7 +64,7 @@ export default class App extends React.Component {
             </Link>
             
             <Link to="/">
-              <img src={require('../Assets/Media/avatar.jpg')}  alt="Profile" />
+              <img src={require('../Assets/Images/avatar.jpg')}  alt="Profile" />
             </Link>
 
           </menu>

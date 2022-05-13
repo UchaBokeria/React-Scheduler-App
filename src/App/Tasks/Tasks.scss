@@ -1,0 +1,29 @@
+@import "../../Assets/Styles/Linkin.scss";
+
+.prio_one {
+    background: white;
+}
+
+.prio_two {
+    background: $secondary;
+}
+
+.prio_three {
+    background: #ffdd1d;
+}
+
+.circle {
+    width: 1.5vw;
+    height:3vh;
+    border-radius: 100ch;
+}
+
+.prioContainer {
+    width: 100%;
+    @include flex();
+}
+
+.datetime {
+    letter-spacing: 0.1vw;
+    //color: $secondary;
+}

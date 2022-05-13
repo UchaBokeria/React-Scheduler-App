@@ -28,8 +28,8 @@ export default class Table extends React.Component  {
     createNewOne = () => {
 
         var newOne = `<tr>
-            <td><input class="newOnes" type="text" placeholder="Title" /></td>
-            <td><input class="newOnes" type="text" placeholder="Age" /></td>
+            <td><input className="newOnes" type="text" placeholder="Title" /></td>
+            <td><input className="newOnes" type="text" placeholder="Age" /></td>
         </tr>`;
 
         this.setState({acceptMode: true});
@@ -101,30 +101,43 @@ export default class Table extends React.Component  {
             <>
             
             <div className="Tools">
+                
+                <button onClick={this.removeSelected} className="right">
+                    <i className="material-icons">delete</i>
+                </button>
+
                 {
                     this.state.acceptMode ? 
                         <div>
-                            <button onClick={this.acceptNewOne}>
+                            <button onClick={this.acceptNewOne} className="right">
                                 <i className="material-icons">done</i>
                             </button>
 
-                            <button onClick={this.closeNewOne}>
+                            <button onClick={this.closeNewOne} className="right">
                                 <i className="material-icons">close</i>
                             </button>
                         </div>
                     :
-                        <button onClick={this.createNewOne}>
+                        <button onClick={this.createNewOne} className="right">
                             <i className="material-icons">add_circle</i>
                         </button>
                 }
                 
-                <button onClick={this.removeSelected}>
-                    <i className="material-icons">delete</i>
-                </button>
-                
-                <button onClick={this.selectAll}>
+                <button onClick={this.selectAll} className="">
                     <i className="material-icons">
                         {this.state.selectAll ? 'check_box_outline' : 'check_box_outline_blank'}
+                    </i>
+                </button>
+
+                <button onClick={this.selectAll} className="">
+                    <i className="material-icons">
+                        unpublished
+                    </i>
+                </button>
+
+                <button onClick={this.selectAll} className="">
+                    <i className="material-icons">
+                        verified
                     </i>
                 </button>
 
@@ -156,10 +169,14 @@ export default class Table extends React.Component  {
                                         return <td key={data["id"] + index}
                                             className="td"
                                             col-name={item.name}
-                                            col-value={data[item.name]}
+                                            col-value={data[item.name].toString()}
                                             col-title={data[item.title]}
                                             col-config={JSON.stringify(data)}>
-                                            {data[item.name]}
+                                            { 
+                                                item.hasOwnProperty("template") ? 
+                                                item.template(data)  : 
+                                                data[item.name] 
+                                            }
                                         </td>;
                                 })}
                             </tr>

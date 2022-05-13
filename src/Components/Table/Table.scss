@@ -7,10 +7,10 @@
     padding: 0 0 4vh 0;
 
     button {
-        width: 10%;
         float:left;
-        margin-right: 5vw;
+        margin-right: 1vw;
         @include flex();
+        position: relative;
     }
 
     i {
@@ -21,9 +21,15 @@
         width: 30%;
         @include flex(space-between);
     }
+    
+    .right {
+        float: right;
+        margin: 0 0 0 1vw;
+    }
 }
 
-.createMode {
+.TableHeaderRow {
+    font-size: 1.2vw;
 }
 
 .Table {
@@ -38,7 +44,7 @@
     width: 100%;
     color: white;
     @include shadow();
-    border-radius: 0.7ch;
+    border-radius: 1ch;
 
 
     .TableHeader {

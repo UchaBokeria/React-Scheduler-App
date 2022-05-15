@@ -26,15 +26,22 @@ export default class Table extends React.Component  {
     }
 
     createNewOne = () => {
+        
+        // TODO : fix , symbols while adding
 
+        console.log(`this.columnNames`, this.columnNames);
         var newOne = `<tr>
-            <td><input className="newOnes" type="text" placeholder="Title" /></td>
-            <td><input className="newOnes" type="text" placeholder="Age" /></td>
+            ${this.columnNames.map( col =>
+                col.hidden ? '' : 
+                `<td className="${col.hidden ? 'hidden' : ''}">
+                    <input className="newOnes" type="text" placeholder="${col.title}" />
+                </td>`
+            )}
         </tr>`;
 
         this.setState({acceptMode: true});
         var last = document.querySelector(".TableBody").innerHTML;
-        document.querySelector(".TableBody").innerHTML = newOne + last;
+        document.querySelector(".TableBody").prepend(newOne);
 
     }
 
@@ -129,13 +136,13 @@ export default class Table extends React.Component  {
                     </i>
                 </button>
 
-                <button onClick={this.selectAll} className="">
+                <button  className="">
                     <i className="material-icons">
                         unpublished
                     </i>
                 </button>
 
-                <button onClick={this.selectAll} className="">
+                <button  className="">
                     <i className="material-icons">
                         verified
                     </i>
